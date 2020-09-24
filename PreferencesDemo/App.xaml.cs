@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace PreferencesDemo
 {
@@ -10,21 +8,6 @@ namespace PreferencesDemo
         {
             InitializeComponent();
             MainPage = new MainPage();
-        }
-
-        protected override void OnStart()
-        {
-            base.OnStart();
-        }
-
-        protected override void OnSleep()
-        {
-            base.OnSleep();
-        }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
         }
     }
 }

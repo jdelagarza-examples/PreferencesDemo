@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using PreferencesDemo.Storages;
 using Xamarin.Forms;
 
 namespace PreferencesDemo
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
@@ -21,6 +15,11 @@ namespace PreferencesDemo
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            const string key = "app_timeout";
+            var timeout = PreferencesStorage.Get(key, 0.0);
+            if (timeout == 0.0)
+                PreferencesStorage.Set(key, 30.0);
+            timeout = PreferencesStorage.Get(key, 0.0);
         }
     }
 }
